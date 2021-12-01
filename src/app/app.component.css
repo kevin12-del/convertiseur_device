@@ -1,0 +1,54 @@
+li {
+    list-style: none !important;
+    color: greenyellow;
+    font-size: 20px;
+}
+
+nav ul {
+    background-color:blue ;
+    margin: 0;
+}
+
+nav ul li {
+    float: left;
+    background-color: #e0f00a;
+}
+
+nav ul li a {
+    color: rgb(223, 14, 14);
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+nav ul li ul {
+    display: none;
+}
+
+/* Rend le menu déroulant caché par défaut */
+nav ul li:hover ul {
+    /* Affiche la dropNav au survol de la souris avec la class .drop */
+
+    display: list-item !important;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -10px;
+    direction: rtl;
+}
+h1{
+    text-align: center;
+}
+hr{
+    width: 50%;
+}
+div{
+    text-align: center;
+}
+input{
+    border-radius: 30%;
+    width: 30%; 
+    height: 100px; 
+    text-align: center; 
+    font-size: 200%;
+}

@@ -1,0 +1,31 @@
+<br>
+<h1 align="center">CONVERTISEUR DE DEVICE</h1>
+<hr style="width: 50%;">
+<br>
+<br>
+<div align="center">
+<nav style="display: flexbox; align-items: center;" >
+  <ul>
+    <li><a href="#">{{depart}}</a>
+      <ul>
+        <a *ngFor="let devise of listedesDevises" (click)="setDeviseDepart(devise)">{{devise}}</a>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#">{{arrivee}}</a>
+      <ul>
+        <a *ngFor="let devise of listedesDevises" (click)="setDeviseArrivee(devise)">{{devise}}</a>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<br>
+<br>
+<br>
+<input type="text" value='{{ value2 | convert: arrivee: depart}}' [(ngModel)]='value' style="border-radius: 30%; width: 30%; height: 100px; text-align: center; font-size: 200%;">
+<br><br>
+<input type="text" value='{{ value | convert: depart: arrivee}}' [(ngModel)]='value2' style="border-radius: 30%; width: 30%; height: 100px; text-align: center; font-size: 200%;">
+</div>

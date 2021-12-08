@@ -1,31 +1,37 @@
 <br>
-<h1 align="center">CONVERTISEUR DE DEVICE</h1>
+<h1 align="center">CONVERTISEUR DE DEVISE</h1>
+<h2 align="center"><strong>Réaliser par:</strong><em><u>TSOBGNI KENFACK KEVIN DURAMEL  </u></em><br>  4GI 18p015</h2>
 <hr style="width: 50%;">
 <br>
 <br>
-<div align="center">
-<nav style="display: flexbox; align-items: center;" >
-  <ul>
-    <li><a href="#">{{depart}}</a>
-      <ul>
-        <a *ngFor="let devise of listedesDevises" (click)="setDeviseDepart(devise)">{{devise}}</a>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#">{{arrivee}}</a>
-      <ul>
-        <a *ngFor="let devise of listedesDevises" (click)="setDeviseArrivee(devise)">{{devise}}</a>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-<br>
-<br>
-<br>
-<input type="text" value='{{ value2 | convert: arrivee: depart}}' [(ngModel)]='value' style="border-radius: 30%; width: 30%; height: 100px; text-align: center; font-size: 200%;">
-<br><br>
-<input type="text" value='{{ value | convert: depart: arrivee}}' [(ngModel)]='value2' style="border-radius: 30%; width: 30%; height: 100px; text-align: center; font-size: 200%;">
-</div>
+    <table border="1px" align="center" style="width: 50%; height: 100px;">
+        <thead>
+            <tr>
+                <th> valeurs de départ </th>
+                <th> valeurs d'arrivé</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <select style="width: 100%; height: 100%;" [(ngModel)]='depart'>
+                        <option *ngFor="let devise of listeDevise" [ngValue]="devise">{{devise.name}}</option>
+                        
+                    </select>
+                </td>
+                <td>
+                    <select style="width: 100%; height: 100%;" [(ngModel)]='arrivee'>
+                        <option *ngFor="let devise of listeDevise" [ngValue]="devise">{{devise.name}}</option>
+                        
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" value='{{ valuer | convertDevise: arrivee.name: depart.name}}' [(ngModel)]='value' style="width: 98%; height: 90%;"></td>
+                <td><input type="text" value='{{ value | convertDevise: depart.name: arrivee.name}}' [(ngModel)]='valuer' style="width: 98%; height: 90%;"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    
